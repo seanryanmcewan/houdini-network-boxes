@@ -17,7 +17,7 @@ class network_boxes:
         
         # SEARCH INPUT NODES MATCHING SEARCH_NAMES, IGNORING ANY NODES MATCHING IGNORE_NAMES
         for node in self.nodes:
-            if any(search_name in node.name().lower() for search_name in search_names):
+            if any(search_name.lower() in node.name().lower() for search_name in search_names):
                 if not any(ignore_name in node.name().lower() for ignore_name in ignore_names):
                     found_nodes.append(node) 
                     
@@ -84,3 +84,5 @@ class network_boxes:
         self.build_box(fx_list, "FX", fx_node_color, fx_box_color, ignore_names=fx_ignore)
         self.build_box(render_list, "RENDER", render_node_color, render_box_color, ignore_names=render_ignore)
 
+nb = network_boxes()
+nb.run()
