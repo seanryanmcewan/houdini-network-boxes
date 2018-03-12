@@ -1,4 +1,4 @@
-class network_boxes:
+class network_boxes(object):
     def __init__(self, parent=None):
         
         # INITIALIZE VARIABLES        
