@@ -9,7 +9,7 @@ class network_boxes:
         if not self.nodes:
             self.nodes = self.obj_nodes.children()
             
-    # FUNCTION TO CREATE NETWORK BOXES AROUND INPUT NODES, SETTING THE NODE AND NETWORK BOXES COLORS AS WELL
+    # CREATES NETWORK BOXES AROUND INPUT NODES, SETTING THE NODE AND NETWORK BOXES COLORS AS WELL
     def build_box(self, search_names, name, node_color, box_color, ignore_names=()): 
         
         # INITIALIZE VARIABLES
