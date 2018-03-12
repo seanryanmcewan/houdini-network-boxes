@@ -1,4 +1,17 @@
 class network_boxes(object):
+    """
+    A shelf tool to organize obj level nodes into network boxes. Will run exclusively on selected nodes, otherwise
+    will run on all nodes on obj level.
+
+    Currently organizes the following (not case sensitive):
+    FX (contains 'fx')
+    Lights (contains 'light')
+    Cameras (contains 'cam')
+    Tracking (contains 'trk')
+    Assets (contains '_prop','_anim','_char','_cre",'_env', or '_ele')
+    Render (contains 'render')
+    """
+    
     def __init__(self, parent=None):
         
         # INITIALIZE VARIABLES        
@@ -11,6 +24,18 @@ class network_boxes(object):
             
     # CREATES NETWORK BOXES AROUND INPUT NODES, SETTING THE NODE AND NETWORK BOXES COLORS AS WELL
     def build_box(self, search_names, name, node_color, box_color, ignore_names=()): 
+        """
+        Creates network boxes around input nodes, and sets the node color and network box color.
+        
+        Inputs:
+        search_names    A list of search terms. If a node name contains any items in this list, 
+                        it will be added to the current network box.   
+        name            The network box will be set to this name.
+        node_color      Nodes added to the current network box will be set to this hou.Color.
+        box_color       Current network box will be set to this hou.Color.
+        ignore_names    A list of search terms. If a node name contains any items in this list, 
+                        it will be excluded from the current network box.
+        """
         
         # INITIALIZE VARIABLES
         found_nodes = []    
@@ -48,6 +73,9 @@ class network_boxes(object):
             box.setColor(box_color)    
 
     def run(self):
+        """
+        Defines the colors, search terms, and exclude terms, then sends to build_box method.
+        """
         
         # SET NODE AND NETWORK BOX COLORS, AND SPECIFY SEARCH NAMES AND IGNORE NAMES
         light_node_color = hou.Color(1,1,0.55)
