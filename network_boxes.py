@@ -27,14 +27,14 @@ class network_boxes(object):
         """
         Creates network boxes around input nodes, and sets the node color and network box color.
         
-        Inputs:
-        search_names    A list of search terms. If a node name contains any items in this list, 
-                        it will be added to the current network box.   
-        name            The network box will be set to this name.
-        node_color      Nodes added to the current network box will be set to this hou.Color.
-        box_color       Current network box will be set to this hou.Color.
-        ignore_names    A list of search terms. If a node name contains any items in this list, 
-                        it will be excluded from the current network box.
+        Arguments:
+        search_names (list): A list of search terms. If a node name contains any items in this list, 
+                             it will be added to the current network box.   
+        name (string): The network box will be set to this name.
+        node_color (hou.Color): Nodes added to the current network box will be set to this hou.Color.
+        box_color (hou.Color): Current network box will be set to this hou.Color.
+        ignore_names (list): A list of search terms. If a node name contains any items in this list, 
+                             it will be excluded from the current network box.
         """
         
         # INITIALIZE VARIABLES
